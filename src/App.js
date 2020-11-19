@@ -12,7 +12,7 @@ function App() {
           style={{
             margin: 10,
             border: "solid",
-            borderColor: "red",
+            borderColor: "blue",
             color: "black",
             borderRadius: 45,
           }}
@@ -25,7 +25,7 @@ function App() {
           style={{
             margin: 10,
             border: "solid",
-            borderColor: "red",
+            borderColor: "blue",
             borderRadius: 45,
             color: "black",
           }}
@@ -38,7 +38,7 @@ function App() {
           style={{
             margin: 10,
             border: "solid",
-            borderColor: "red",
+            borderColor: "blue",
             borderRadius: 45,
             color: "black",
           }}
