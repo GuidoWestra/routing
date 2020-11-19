@@ -14,14 +14,26 @@ export default function DiscoverMoviesPage() {
         return (
           <div
             style={{
-              margin: 6,
+              margin: 15,
               border: "solid",
-              borderColor: "blue",
+              borderColor: "gray",
               borderRadius: 13,
               color: "black",
+              padding: 10,
+              paddingRight: 10,
+              paddingBottom: 25,
+              width: 350,
             }}
           >
             Name : {name.Title} Year : {name.Year}
+            <img
+              style={{
+                border: "solid",
+                borderColor: "black",
+                borderRadius: 13,
+              }}
+              src={name.Poster}
+            />
           </div>
         );
       })}
