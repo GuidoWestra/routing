@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import { NavLink, Route, Switch } from "react-router-dom";
 import "./App.css";
 import DiscoverMoviesPages from "./pages/DiscoverMoviesPage";
