@@ -27,6 +27,7 @@ export default function DiscoverMoviesPage() {
           >
             Name : {name.Title} Year : {name.Year}
             <img
+              alt={name.imdbID}
               style={{
                 border: "solid",
                 borderColor: "black",
