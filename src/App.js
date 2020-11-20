@@ -3,7 +3,6 @@ import "./App.css";
 import DiscoverMoviesPages from "./pages/DiscoverMoviesPage";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import Movie from "./pages/Movie";
 import MovieInfo from "./pages/MovieInfo";
 
 function App() {
@@ -52,7 +51,6 @@ function App() {
       </nav>
       <Switch>
         <Route path="/movie/:id" component={MovieInfo} />
-        <Route path="/movie" component={Movie} />
         <Route path="/discover" component={DiscoverMoviesPages} />
         <Route path="/about" component={AboutPage} />
         <Route path="/" component={HomePage} />

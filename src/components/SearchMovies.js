@@ -12,7 +12,6 @@ export default function SearchMovies({ setMovies }) {
       `https://omdbapi.com/?apikey=c0b19989&s=${queryParam}`
     ).then((result) => {
       setMovies(result.data.Search);
-      console.log(result);
     });
   };
 

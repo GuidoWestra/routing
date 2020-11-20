@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import SearchMovies from "../components/SearchMovies";
-import Movie from "./Movie";
+// import Movie from "./Movie";
 
 export default function DiscoverMoviesPage() {
   //   await fetch("http://www.omdbapi.com/?s=life&apikey=b3d9013d");
@@ -12,14 +13,14 @@ export default function DiscoverMoviesPage() {
     <div>
       {/* <h1>Movies :</h1> */}
       <SearchMovies setMovies={set_data} />
-      {data.map((name) => {
+      {data.map((name, i) => {
         return (
           <div
+            key={i}
             style={{
               margin: 10,
               border: "groove",
               borderColor: "white",
-              borderRadius: 13,
               color: "black",
               padding: 10,
               paddingRight: 10,
@@ -38,12 +39,20 @@ export default function DiscoverMoviesPage() {
               }}
               src={name.Poster}
             />
-            <button
-              onClick={console.log("click")}
-              // href={`Movie/${data.imdbID}`}
+            <NavLink
+              style={{
+                margin: 10,
+                border: "solid",
+                borderColor: "blue",
+                borderRadius: 45,
+                color: "black",
+              }}
+              to={`/movie/${name.imdbID}`}
+              onClick={console.log("Hello")}
             >
-              Info
-            </button>
+              {" "}
+              More Info
+            </NavLink>
           </div>
         );
       })}
