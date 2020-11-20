@@ -1,61 +1,58 @@
 import React from "react";
 import { useState } from "react";
+import { Button, Card, CardGroup, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+// import {
+//   Button,
+//   Form,
+//   FormControl,
+//   Nav,
+//   Navbar,
+//   NavDropdown,
+// } from "react-bootstrap";
 import SearchMovies from "../components/SearchMovies";
-// import Movie from "./Movie";
 
 export default function DiscoverMoviesPage() {
-  //   await fetch("http://www.omdbapi.com/?s=life&apikey=b3d9013d");
   const [data, set_data] = useState([]);
-  console.log("HI", data);
 
   return (
-    <div>
-      {/* <h1>Movies :</h1> */}
+    <Container>
       <SearchMovies setMovies={set_data} />
       {data.map((name, i) => {
         return (
-          <div
-            key={i}
-            style={{
-              margin: 10,
-              border: "groove",
-              borderColor: "white",
-              color: "black",
-              padding: 10,
-              paddingRight: 10,
-              paddingBottom: 25,
-              width: 500,
-              // border: 5px-outset-orange
-            }}
-          >
-            Name : {name.Title} Year : {name.Year}
-            <img
-              alt={name.imdbID}
-              style={{
-                border: "solid",
-                borderColor: "black",
-                borderRadius: 13,
-              }}
-              src={name.Poster}
-            />
-            <NavLink
-              style={{
-                margin: 10,
-                border: "solid",
-                borderColor: "blue",
-                borderRadius: 45,
-                color: "black",
-              }}
-              to={`/movie/${name.imdbID}`}
-              onClick={console.log("Hello")}
-            >
-              {" "}
-              More Info
-            </NavLink>
-          </div>
+          <CardGroup>
+            <Card>
+              <Card.Img
+                className="justify-content-md-center"
+                style={{
+                  maxWidth: "20rem",
+                  border: "solid",
+                  borderRadius: 22,
+                }}
+                variant="center"
+                src={name.Poster}
+              />
+              <Card.Body>
+                <Card.Title>{name.Title}</Card.Title>
+                <Card.Text></Card.Text>
+
+                <Button>
+                  <NavLink
+                    style={{ color: "white" }}
+                    to={`/movie/${name.imdbID}`}
+                  >
+                    {" "}
+                    More Info
+                  </NavLink>
+                </Button>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">{name.Year}</small>
+              </Card.Footer>
+            </Card>
+          </CardGroup>
         );
       })}
-    </div>
+    </Container>
   );
 }

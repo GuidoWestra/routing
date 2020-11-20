@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <nav style={{ marginTop: 10 }}>
-        <NavLink
+        {/* <NavLink
           style={{
             margin: 10,
             border: "solid",
@@ -47,7 +47,7 @@ function App() {
         >
           {" "}
           About
-        </NavLink>
+        </NavLink> */}
       </nav>
       <Switch>
         <Route path="/movie/:id" component={MovieInfo} />
